@@ -1,11 +1,11 @@
 import { create } from 'zustand'
 
 interface DictionaryState {
-  bears: number
-  increase: (by: number) => void
+  word: string | null;
+  setWord: (word: string) => void;
 }
 
 export const useDictionaryStore = create<DictionaryState>()((set) => ({
-  bears: 0,
-  increase: (by) => set((state) => ({ bears: state.bears + by })),
+  word: null,
+  setWord: (word: string) => set({ word }),
 }))
