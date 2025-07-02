@@ -4,8 +4,8 @@ const App = () => {
   return (
     <main
       className="
-                min-h-dvh w-full flex flex-col items-start justify-start 
-                bg-background text-text font-sans p-6
+                min-h-dvh w-full flex flex-col items-start justify-start
+                bg-background text-text font-sans px-4
             ">
       <Hero />
     </main>
