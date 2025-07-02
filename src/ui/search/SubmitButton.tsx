@@ -1,10 +1,12 @@
 import { useDictionaryStore } from "../../../useDictionaryStore";
+import Loading from "./Loading";
 
 const SubmitButton = () => {
 
     const {
         word,
         setDictionary,
+        loading,
         setLoading,
     } = useDictionaryStore();
 
@@ -32,12 +34,20 @@ const SubmitButton = () => {
     }
 
     return (
-        <input
-            type="button"
-            value="Submit"
-            className="bg-accent rounded-md text-center text-text py-3 px-10 hover:cursor-pointer hover:bg-blue-500"
-            onClick={() => handleGetDictionary()}
-        />
+        <div className="bg-accent rounded-md text-center text-text py-3 px-10 hover:cursor-pointer hover:bg-blue-500">
+            {
+                loading ? (
+                    <Loading />
+                ) : (
+                    <input
+                        type="button"
+                        value={"Submit"}
+                        className="w-full"
+                        onClick={() => handleGetDictionary()}
+                    />
+                )
+            }
+        </div>
     );
 }
 
