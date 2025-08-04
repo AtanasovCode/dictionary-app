@@ -3,7 +3,7 @@ import Logo from "../../assets/book.svg";
 import { useDictionaryStore } from "../../../useDictionaryStore";
 import SansIcon from "../../assets/sans.svg";
 import SerifIcon from "../../assets/serif.svg";
-import NightIcon from "../../assets/night.svg";
+import NightIcon from "../../assets/moon.svg";
 import DayIcon from "../../assets/sun.svg";
 
 export default function Toggles() {
