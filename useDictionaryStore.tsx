@@ -9,6 +9,12 @@ interface DictionaryState {
 
   dictionary: string[];
   setDictionary: (value: string[]) => void;
+
+  theme: string;
+  setTheme: (theme: string) => void;
+
+  fontStyle: string;
+  setFontStyle: (style: string) => void;
 }
 
 export const useDictionaryStore = create<DictionaryState>()((set) => ({
@@ -20,4 +26,10 @@ export const useDictionaryStore = create<DictionaryState>()((set) => ({
 
   dictionary: [],
   setDictionary: (value: string[]) => set({ dictionary: value }),
+
+  theme: "dark",
+  setTheme: (theme: string) => set({ theme }),
+
+  fontStyle: "serif",
+  setFontStyle: (style: string) => set({ fontStyle: style }),
 }))

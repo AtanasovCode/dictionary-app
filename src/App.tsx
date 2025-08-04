@@ -12,7 +12,7 @@ const App = () => {
       <div 
         className="
           flex flex-col items-start justfiy-start
-          w-full md:w-w-[90%] lg:w-[50%]
+          w-full md:w-4/5 lg:w-2/3 xl:w-1/2
         "
       >
         <Hero />
