@@ -1,5 +1,6 @@
 import { useDictionaryStore } from "../../../useDictionaryStore";
 import Loading from "./Loading";
+import SearchIcon from "../../assets/search-icon.svg";
 
 const SubmitButton = () => {
 
@@ -34,20 +35,22 @@ const SubmitButton = () => {
     }
 
     return (
-        <div className="bg-accent rounded-md text-center text-text py-3 px-10 hover:cursor-pointer hover:bg-blue-500">
+        <button
+            className="px-6 rounded-md bg-accent hover:bg-blue-500 flex items-center justify-center cursor-pointer"
+            onClick={() => handleGetDictionary()}
+        >
             {
                 loading ? (
                     <Loading />
                 ) : (
-                    <input
-                        type="button"
-                        value={"Submit"}
-                        className="w-full"
-                        onClick={() => handleGetDictionary()}
+                    <img
+                        src={SearchIcon}
+                        alt="search icon"
+                        className="h-8"
                     />
                 )
             }
-        </div>
+        </button>
     );
 }
 
