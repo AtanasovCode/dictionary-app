@@ -11,7 +11,7 @@ const SearchBar = () => {
         <input 
             type="text"
             value={word ? word : ""}
-            className="w-full text-left p-3 outline-none rounded-md text-text" 
+            className="w-full text-left p-3 outline-none rounded-md text-text-light dark:text-text" 
             placeholder="Hello"
             onChange={(e) => setWord(e.currentTarget.value)}
         />

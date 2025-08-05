@@ -14,15 +14,15 @@ export default function Toggles() {
     } = useDictionaryStore();
 
     return (
-        <div className="w-full flex items-center justify-between gap-4 text-text">
+        <div className="w-full flex items-center justify-between gap-4 text-text-light dark:text-text">
             <img
                 src={Logo}
                 alt="Logo"
-                className="w-16"
+                className="w-16 invert dark:filter-none"
             />
             <div className="flex items-center justify-center gap-4">
                 <OptionsToggle
-                    icons={[NightIcon, DayIcon]}
+                    icons={[DayIcon, NightIcon]}
                     option={theme}
                     options={["dark", "light"]}
                     toggleOption={setTheme}

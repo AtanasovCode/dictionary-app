@@ -40,7 +40,7 @@ const Search = () => {
                 e.preventDefault()
                 handleGetDictionary();
             }}
-            className="flex items-stretch justify-between w-full p-1 rounded-md bg-secondary"
+            className="flex items-stretch justify-between w-full p-1 rounded-md bg-secondary-light dark:bg-secondary"
         >
             <SearchBar />
             <SubmitButton />
