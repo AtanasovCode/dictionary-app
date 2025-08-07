@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import initialDictionaryData from "./utils/initial-response.json";
 import { useDictionaryStore } from "../useDictionaryStore";
 
 import Hero from "./components/Hero";
@@ -8,7 +9,18 @@ const App = () => {
 
   const {
     theme,
+    setLoading,
+    dictionary,
+    setDictionary,
   } = useDictionaryStore();
+
+  useEffect(() => {
+    if (!dictionary.length) {
+      setLoading(true);
+      setDictionary(initialDictionaryData);
+      setLoading(false);
+    }
+  }, [])
 
   useEffect(() => {
     const root = document.documentElement;

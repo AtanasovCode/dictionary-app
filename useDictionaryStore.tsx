@@ -1,5 +1,13 @@
 import { create } from 'zustand'
 
+interface DictionaryEntry {
+  word: string;
+  phonetics: any[];
+  meanings: any[];
+  license: { name: string; url: string };
+  sourceUrls: string[];
+}
+
 interface DictionaryState {
   word: string | null;
   setWord: (word: string) => void;
@@ -7,8 +15,8 @@ interface DictionaryState {
   loading: boolean;
   setLoading: (value: boolean) => void;
 
-  dictionary: string[];
-  setDictionary: (value: string[]) => void;
+  dictionary: DictionaryEntry[];
+  setDictionary: (value: DictionaryEntry[]) => void;
 
   theme: string;
   setTheme: (theme: string) => void;
@@ -25,7 +33,7 @@ export const useDictionaryStore = create<DictionaryState>()((set) => ({
   setLoading: (loading: boolean) => set({ loading }),
 
   dictionary: [],
-  setDictionary: (value: string[]) => set({ dictionary: value }),
+  setDictionary: (value: DictionaryEntry[]) => set({ dictionary: value }),
 
   theme: "dark",
   setTheme: (theme: string) => set({ theme }),
