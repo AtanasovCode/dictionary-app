@@ -9,18 +9,25 @@ const App = () => {
 
   const {
     theme,
-    setLoading,
     dictionary,
+    setWord,
+    setSoundID,
     setDictionary,
   } = useDictionaryStore();
 
   useEffect(() => {
     if (!dictionary.length) {
-      setLoading(true);
       setDictionary(initialDictionaryData);
-      setLoading(false);
     }
   }, [])
+
+  useEffect(() => {
+    const capitalizedWord = dictionary[0]?.word.charAt(0).toUpperCase() + dictionary[0]?.word.slice(1);
+    setWord(capitalizedWord);
+
+    const sound_id = dictionary[0]?.phonetics.find(p => p.audio)?.audio || "";
+    setSoundID(sound_id);
+  }, [dictionary]);
 
   useEffect(() => {
     const root = document.documentElement;

@@ -9,6 +9,11 @@ interface DictionaryEntry {
 }
 
 interface DictionaryState {
+  wordInput: string | null;
+  setWordInput: (word: string) => void;
+  soundID: string;
+  setSoundID: (id: string) => void;
+
   word: string | null;
   setWord: (word: string) => void;
 
@@ -26,6 +31,11 @@ interface DictionaryState {
 }
 
 export const useDictionaryStore = create<DictionaryState>()((set) => ({
+  wordInput: null,
+  setWordInput: (word: string) => set({ wordInput: word }),
+  soundID: "",
+  setSoundID: (id: string) => set({ soundID: id }),
+
   word: null,
   setWord: (word: string) => set({ word }),
 

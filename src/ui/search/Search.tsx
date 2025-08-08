@@ -5,7 +5,7 @@ import { useDictionaryStore } from "../../../useDictionaryStore";
 const Search = () => {
 
     const {
-        word,
+        wordInput,
         setDictionary,
         setLoading,
     } = useDictionaryStore();
@@ -14,7 +14,7 @@ const Search = () => {
         try {
             setLoading(true);
 
-            const trimmedWord = word?.trim(); // trim word to avoid errors with empty spaces
+            const trimmedWord = wordInput?.trim(); // trim word to avoid errors with empty spaces
             const data = await fetch(` https://api.dictionaryapi.dev/api/v2/entries/en/${trimmedWord}`);
 
             if (!data) {
